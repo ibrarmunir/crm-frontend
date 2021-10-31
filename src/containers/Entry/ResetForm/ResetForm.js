@@ -39,7 +39,7 @@ const ResetForm = ({ handleResetFormSubmission, formSwitcher}) => {
             </Row>
             <Row>
                 <Col>
-                    <a href="#!" onClick={formSwitcher("login")}>Login Now!</a>
+                    <a href="#!" onClick={formSwitcher("login")}>Reset Password!</a>
                 </Col>
             </Row>
         </Container>
