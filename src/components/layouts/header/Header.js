@@ -1,13 +1,13 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import logo from "assets/logo.png";
+import logo from "assets/images/logo.png";
 
 const Header = () => {
   return (
     <Navbar collapseOnSelect bg="info" expand="lg">
       <Navbar.Brand>
-        <img src={logo} alt="CRM Logo" />
+        <img src={logo} alt="CRM Logo" width={60} height={60} />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
