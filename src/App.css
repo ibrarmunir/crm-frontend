@@ -15,7 +15,6 @@ header {
 main {
   grid-area: main;
   min-height: 88vh;
-  margin-top: 2rem;
 }
 
 footer {
@@ -23,4 +22,10 @@ footer {
   background-color: black;
   color: #fff;
   padding: 1rem;
+}
+
+.links a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
 }

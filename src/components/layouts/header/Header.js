@@ -2,8 +2,16 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import logo from "assets/images/logo.png";
+import { Link, useHistory } from "react-router-dom";
 
 const Header = () => {
+  const history = useHistory();
+
+  const logout = (event) => {
+    // event.stopPropagation();
+    history.push("/");
+  };
+
   return (
     <Navbar collapseOnSelect bg="info" expand="lg">
       <Navbar.Brand>
@@ -11,10 +19,14 @@ const Header = () => {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto">
-          <Nav.Link href="#home">Dashboard</Nav.Link>
-          <Nav.Link href="#link">Tickets</Nav.Link>
-          <Nav.Link href="#link">Logout</Nav.Link>
+        <Nav className="ml-auto links">
+          <Link className="nav-link" to="/dashboard">
+            Dashboard
+          </Link>
+          <Link className="nav-link" to="/tickets">
+            Tickets
+          </Link>
+          <Nav.Link onClick={logout}>Logout</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

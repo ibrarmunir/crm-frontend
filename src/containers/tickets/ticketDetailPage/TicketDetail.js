@@ -12,11 +12,13 @@ const ticket = ticketsData[0];
 
 const breadcrumbItems = [{ name: "Ticket", routerLink: "/ticket-detail" }];
 
-const TicketDetail = () => {
+const TicketDetail = ({ match }) => {
   const [message, setMessage] = React.useState("");
 
+  const { id } = match.params;
+
   const handleChange = (event) => {
-    const messgae = event.target.status;
+    const message = event.target.status;
     setMessage(message);
   };
 
@@ -43,9 +45,10 @@ const TicketDetail = () => {
       </Row>
       <Row>
         <Col>
-          {ticket.history.map((msg) => {
+          {ticket.history.map((msg, index) => {
             return (
               <Message
+                key={index}
                 message={msg.message}
                 date={msg.date}
                 sender={msg.sender}

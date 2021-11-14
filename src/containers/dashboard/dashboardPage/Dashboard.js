@@ -7,6 +7,7 @@ import DashboardTicketTable from "../dashboardTicketTable/DashboardTicketTable";
 import ticketsData from "assets/data/tickets.json";
 import Breadcrumb from "components/breadcrumb/Breadcrumb";
 import { ticketTableHeader } from "constant";
+import { useHistory } from "react-router";
 
 const dashboardBreadcrumbItems = [
   { name: "Home", routerLink: "/" },
@@ -14,6 +15,13 @@ const dashboardBreadcrumbItems = [
 ];
 
 const Dashboard = () => {
+  const history = useHistory();
+
+  const redirectedToNewTicketPage = (event) => {
+    event.stopPropagation();
+    history.push("/add-ticket");
+  };
+
   return (
     <Container>
       <Row>
@@ -23,7 +31,9 @@ const Dashboard = () => {
       </Row>
       <Row>
         <Col className="text-center mt-5 mb-2">
-          <Button variant="info">Add New Tickets</Button>
+          <Button onClick={redirectedToNewTicketPage} variant="info">
+            Add New Tickets
+          </Button>
         </Col>
       </Row>
       <Row>

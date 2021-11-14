@@ -8,6 +8,7 @@ const Button = ({
   block = false,
   disabled = false,
   children,
+  onClick = () => {},
 }) => {
   return (
     <Btn
@@ -16,6 +17,7 @@ const Button = ({
       size={size}
       disabled={disabled}
       block={block}
+      onClick={onClick}
     >
       {children}
     </Btn>
