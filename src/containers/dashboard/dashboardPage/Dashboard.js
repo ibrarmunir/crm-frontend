@@ -6,8 +6,8 @@ import Button from "components/buttons/Button";
 import DashboardTicketTable from "../dashboardTicketTable/DashboardTicketTable";
 import ticketsData from "assets/data/tickets.json";
 import Breadcrumb from "components/breadcrumb/Breadcrumb";
+import { ticketTableHeader } from "constant";
 
-const ticketTableHeader = ["#", "Subjects", "Status", "Opened Date"];
 const dashboardBreadcrumbItems = [
   { name: "Home", routerLink: "/" },
   { name: "Dashboard", routerLink: "/dashboard" },
